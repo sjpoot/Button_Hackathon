@@ -1,0 +1,65 @@
+body {
+    background: #101010;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.canvas {
+    background: royalblue;
+    width: 80%;
+    position: absolute;
+}
+
+/* The button met spinning effect*/
+.buttonBas {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    position: relative;
+    opacity: 0.9;
+    animation: spin 2.5s linear infinite alternate;
+    background-image: url(./media/Benjamin.jpeg);
+    background-size: 100%;  
+    outline: none;
+}
+
+/* Class voor horizontale beweging over de X-as 
+ de timer 10s moet variabel worden met beginwaarde 0*/
+.bounce {
+    animation: bounce 10s linear 0s infinite alternate;
+}
+
+/* Class voor verticale beweging over de Y-as 
+ de timer 3s moet variabel worden met beginwaarde 0*/
+.bounceA {
+    animation: bounceA 3s linear infinite alternate;
+}
+
+/* De vminwaarde moet variabel zijn als de buttongrootte kleiner of groter wordt */
+@keyframes bounce {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(calc(100vw - 32vmin));
+    }
+}
+
+/* De vminwaarde moet variabel zijn als de buttongrootte kleiner of groter wordt */
+@keyframes bounceA {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(calc(100vh - 32vmin));
+    }
+}
+ 
+@keyframes spin {
+    to {
+      transform: rotate(2turn);
+    }
+}
